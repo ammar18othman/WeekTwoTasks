@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Robot arm motors</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+<body>
+
+    <div class="contentContainer">
+        <form name="main" method="post" action="mainEntry.php">
+        <h1>Robot Arm Motors Control</h1>
+        <input type="range" min="0" max="180" value="90" step="1" name="motor1" id="m1" class="slider" oninput="change()"
+            onchange="change()">
+        <p>Motor1 Value: <span id="res1" class="display">90</span></p>
+        <br>
+        <input type="range" min="0" max="180" value="90" step="1" name="motor2" id="m2" class="slider" oninput="change()"
+            onchange="change()">
+        <p>Motor2 Value: <span id="res2" class="display">90</span></p>
+        <br>
+        <input type="range" min="0" max="180" value="90" step="1" name="motor3" id="m3" class="slider" oninput="change()"
+            onchange="change()">
+        <p>Motor3 Value: <span id="res3" class="display">90</span></p>
+        <br>
+        <input type="range" min="0" max="180" value="90" step="1" name="motor4" id="m4" class="slider" oninput="change()"
+            onchange="change()">
+        <p>Motor4 Value: <span id="res4" class="display">90</span></p>
+        <br>
+        <input type="range" min="0" max="180" value="90" step="1" name="motor5" id="m5" class="slider" oninput="change()"
+            onchange="change()">
+        <p>Motor5 Value: <span id="res5" class="display">90</span></p>
+        <br>
+        <input type="range" min="0" max="180" value="90" step="1" name="motor6" id="m6" class="slider" oninput="change()"
+            onchange="change()">
+        <p>Motor6 Value: <span id="res6" class="display">90</span></p>
+        <br>
+        <button type="submit" value="Submit" id="save" class="button" title="Saves current values">Save</button>
+        </form>
+        <form method="POST" action="run.php">
+            <button type="submit" id="run" class="button" title="Runs saved values on database">Run</button>
+        </form>
+       
+    </form>
+    <form method="POST" action="main2.php">
+        <h1>Robot Movement Control</h1>
+        <button type="submit" name="forward" class="button" title="Move robot forward">Forward</button><br>
+        <button type="submit" name="left" class="button" title="Move robot left">Left</button>
+        <button type="submit" name="stop" class="button" title="Stop robot">Stop</button>
+        <button type="submit" name="right" class="button" title="Move robot right">Right</button><br>
+        <button type="submit" name="backward" class="button" title="Move robot backward">Backward</button><br>
+
+    </form>
+    </div>
+
+    <script>
+        var slider1 = document.getElementById("res1");
+        var slider2 = document.getElementById("res2");
+        var slider3 = document.getElementById("res3");
+        var slider4 = document.getElementById("res4");
+        var slider5 = document.getElementById("res5");
+        var slider6 = document.getElementById("res6");
+        var val1 = document.getElementById("m1");
+        var val2 = document.getElementById("m2");
+        var val3 = document.getElementById("m3");
+        var val4 = document.getElementById("m4");
+        var val5 = document.getElementById("m5");
+        var val6 = document.getElementById("m6");
+        function change() {
+            slider1.innerText = val1.value;
+            slider2.innerText = val2.value;
+            slider3.innerText = val3.value;
+            slider4.innerText = val4.value;
+            slider5.innerText = val5.value;
+            slider6.innerText = val6.value;
+        }
+    </script>
+</body>
+
+</html>
